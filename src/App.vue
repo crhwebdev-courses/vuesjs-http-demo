@@ -5,13 +5,13 @@
         <h1>Animations</h1>
         <div class="form-group">
           <label>Username</label>
-          <input type="text" class="form-control" />
+          <input type="text" class="form-control" v-model="user.username" />
         </div>
         <div class="form-group">
           <label>Mail</label>
-          <input type="text" class="form-control" />
+          <input type="text" class="form-control" v-model="user.email" />
         </div>
-        <button class="btn btn-primary">Submit</button>
+        <button class="btn btn-primary" @click="submit">Submit</button>
       </div>
     </div>
   </div>
@@ -26,6 +26,11 @@ export default {
         email: ""
       }
     };
+  },
+  methods: {
+    submit() {
+      console.log(this.user);
+    }
   }
 };
 </script>
