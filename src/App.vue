@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import keys from "./keys/firebaseKeys.js";
 export default {
   data() {
     return {
@@ -29,7 +30,14 @@ export default {
   },
   methods: {
     submit() {
-      console.log(this.user);
+      this.$http.post(`${keys.url}/data.json`, this.user).then(
+        response => {
+          console.log(response);
+        },
+        error => {
+          console.log(error);
+        }
+      );
     }
   }
 };
