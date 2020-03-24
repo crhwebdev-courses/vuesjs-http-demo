@@ -6,6 +6,16 @@ import keys from "./keys/firebaseKeys.js";
 Vue.use(VueResource);
 
 Vue.http.options.root = `${keys.url}/data.json`;
+Vue.http.interceptors.push((request, next) => {
+  // console.log(request);
+  // if (request.method === "POST") {
+  //   request.method = "PUT";
+  // }
+
+  console.log(request);
+
+  next();
+});
 
 new Vue({
   el: "#app",
