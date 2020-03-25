@@ -5,7 +5,7 @@ import keys from "./keys/firebaseKeys.js";
 
 Vue.use(VueResource);
 
-Vue.http.options.root = `${keys.url}/data.json`;
+Vue.http.options.root = `${keys.url}`;
 Vue.http.interceptors.push((request, next) => {
   // console.log(request);
   // if (request.method === "POST") {
